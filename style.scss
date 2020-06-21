@@ -4,7 +4,7 @@ $color: #f00;
 $font-stack: Helvetica, Roboto, Arial;
 $border-size: 1px;
 $petals: 5;
-$rotate: rotate(45deg);
+$rotate: 45deg;
 
 // * Container styles */
 .container {
@@ -20,13 +20,13 @@ $rotate: rotate(45deg);
   position: absolute;
   border-radius: 0 70% 40% 70%;
   border: $border-size solid;
-  width: $size -80;
-  height: $size -80;
+  width: $size - 80;
+  height: $size - 80;
   /* Position these in the center */
   left: $space /2;
   top: ($space *2) + ($space /2);
   /* Rotate 45 deg points the point at the top */
-  transform: $rotate;
+  transform: rotate($rotate);
   /* Move the point of transformation to the lower right */
   transform-origin: 90px 90px;
   animation-duration: 6000ms;
@@ -38,6 +38,8 @@ $rotate: rotate(45deg);
 
 /* These styles apply to individual children */
 
+//individual petal color
+
 .container > div:nth-child(1) {
   animation-name: bloom-1;
   background-color: hsla(0, 100%, 50%, 0.21);
@@ -48,7 +50,9 @@ $rotate: rotate(45deg);
   background-color: hsla(60, 100%, 50%, 0.21);
 }
 
+//middle stationary petal
 .container > div:nth-child(3) {
+  // animation-name: bloom-3;
   background-color: hsla(120, 100%, 50%, 0.21);
 }
 
@@ -62,32 +66,34 @@ $rotate: rotate(45deg);
   background-color: hsla(240, 100%, 50%, 0.21);
 }
 
+//individual petal movement
+
 @keyframes bloom-1 {
-  0% { transform: $rotate; }
-  100% { transform: $rotate * -1; }
+  0% { transform: rotate($rotate); }
+  100% { transform: rotate($rotate * -1); }
 }
 
 @keyframes bloom-2 {
-  0% { transform: $rotate; }
-  100% { transform: $rotate * 3; }
+  0% { transform: rotate($rotate); }
+  100% { transform: rotate($rotate * 3); }
 }
 
 @keyframes bloom-4 {
-  0% { transform: $rotate; }
-  100% { transform: $rotate * 0; }
+  0% { transform: rotate($rotate); }
+  100% { transform: rotate($rotate * 0); }
 }
 
 @keyframes bloom-5 {
-  0% { transform: rotate(45d; }
-  100% { transform: rotate(90deg); }
+  0% { transform: rotate($rotate); }
+  100% { transform: rotate($rotate * 2); }
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// body {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
 
-body, html {
-  height: 100%;
-}
+// body, html {
+//   height: 100%;
+// }
