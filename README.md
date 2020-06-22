@@ -1,28 +1,4 @@
-# SASS Intro
 
-SASS is a langauge for creating CSS styles. SASS compiles to CSS.
-
-install and run sass
-
-## Challenges 
-
-Install SASS. Follow the instructions [here](https://sass-lang.com/install) and explore the options, or follow the short version below and install the SASS CLI. 
-
-`npm install -g sass`
-
-Open index.html in your browser. 
-
-Open the style.scss in your editor. This file is written in the SASS language which it looks like regular CSS. The current code here is plain CSS. 
-
-Run the SASS compiler. 
-
-`sass --watch style.scss style.css`
-
-This starts the SASS CLI which will watch the `style.scss` file for changes and compile it into regular CSS code in `style.css`. 
-
-The code here, like most CSS is not DRY, it tends to have a lot of repeated values and code. This is not uncommon because of the nature of CSS. 
-
-SASS allows you to use variables, if statements, for loops, lists, and other structures not available in CSS.
 
 ### Challenge 1 - Variables
 
