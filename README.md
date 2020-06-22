@@ -220,7 +220,7 @@ Output CSS:
   background-color: rgba(0, 255, 102, 0.2);
 }
 
-.petal-3 {
+.petal-3 {  
   background-color: rgba(0, 102, 255, 0.2);
 }
 

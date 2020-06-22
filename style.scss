@@ -2,7 +2,7 @@ $size: 200px;
 $space: 20px;
 $color: #f00;
 $font-stack: Helvetica, Roboto, Arial;
-$border-size: 1px;
+$border-size: 4px;
 $petals: 5;
 $rotate: 45deg;
 
@@ -39,6 +39,12 @@ $rotate: 45deg;
 /* These styles apply to individual children */
 
 //individual petal color
+// @for $i from 1 through $petals {
+//   $hue: 360 / $petals * $i;
+//   .bloom-#{$i} { 
+//     background-color: hsla($hue, 100%, 50%, 0.21)
+//     }
+//   }
 
 .container > div:nth-child(1) {
   animation-name: bloom-1;
@@ -68,32 +74,41 @@ $rotate: 45deg;
 
 //individual petal movement
 
+@for $i from 1 through 5 {
+  @if $i != 3 {
+    @keyframes bloom-#{$i} {
+      0% { transform: rotate($rotate); }
+    }
+  }
+  
+}
+
 @keyframes bloom-1 {
-  0% { transform: rotate($rotate); }
+  // 0% { transform: rotate($rotate); }
   100% { transform: rotate($rotate * -1); }
 }
 
 @keyframes bloom-2 {
-  0% { transform: rotate($rotate); }
+  // 0% { transform: rotate($rotate); }
   100% { transform: rotate($rotate * 3); }
 }
 
 @keyframes bloom-4 {
-  0% { transform: rotate($rotate); }
+  // 0% { transform: rotate($rotate); }
   100% { transform: rotate($rotate * 0); }
 }
 
 @keyframes bloom-5 {
-  0% { transform: rotate($rotate); }
+  // 0% { transform: rotate($rotate); }
   100% { transform: rotate($rotate * 2); }
 }
 
-// body {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-// body, html {
-//   height: 100%;
-// }
+body, html {
+  height: 100%;
+}
