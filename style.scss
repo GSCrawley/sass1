@@ -12,6 +12,7 @@ $rotate: 45deg;
   height: $size;
   border: $border-size solid;
   position: relative;
+  background-color: $color;
 }
 
 /* Style all of the child divs */
@@ -39,12 +40,7 @@ $rotate: 45deg;
 /* These styles apply to individual children */
 
 //individual petal color
-// @for $i from 1 through $petals {
-//   $hue: 360 / $petals * $i;
-//   .bloom-#{$i} { 
-//     background-color: hsla($hue, 100%, 50%, 0.21)
-//     }
-//   }
+
 
 .container > div:nth-child(1) {
   animation-name: bloom-1;
@@ -59,8 +55,8 @@ $rotate: 45deg;
 //middle stationary petal
 .container > div:nth-child(3) {
   // animation-name: bloom-3;
-  background-color: hsla(120, 100%, 50%, 0.21);
-}
+  background-color: hsla(120, 100%, 50%, 0.21);        
+}                  
 
 .container > div:nth-child(4) {
   animation-name: bloom-4;
@@ -91,6 +87,10 @@ $rotate: 45deg;
 @keyframes bloom-2 {
   // 0% { transform: rotate($rotate); }
   100% { transform: rotate($rotate * 3); }
+}
+
+@keyframes bloom-3 {
+
 }
 
 @keyframes bloom-4 {
